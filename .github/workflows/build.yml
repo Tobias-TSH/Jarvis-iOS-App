@@ -10,39 +10,36 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Show Xcode version
-      run: xcodebuild -version
+      - name: Xcode version
+        run: xcodebuild -version
 
-    - name: Build Archive (no signing)
-      run: |
-        xcodebuild \
-          -project src/ios/Jarvis/Jarvis.xcodeproj \
-          -scheme Jarvis \
-          -configuration Release \
-          -destination 'generic/platform=iOS' \
-          -archivePath $RUNNER_TEMP/Jarvis.xcarchive \
-          archive \
-          CODE_SIGN_IDENTITY="" \
-          CODE_SIGNING_REQUIRED=NO \
-          CODE_SIGNING_ALLOWED=NO \
-          DEVELOPMENT_TEAM="" \
-          | xcpretty || true
+      - name: Build Archive
+        run: |
+          xcodebuild \
+            -project src/ios/Jarvis/Jarvis.xcodeproj \
+            -scheme Jarvis \
+            -configuration Release \
+            -destination "generic/platform=iOS" \
+            -archivePath build/Jarvis.xcarchive \
+            archive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            DEVELOPMENT_TEAM=""
 
-    - name: Package IPA (unsigned)
-      run: |
-        mkdir -p $RUNNER_TEMP/ipa/Payload
-        cp -r "$RUNNER_TEMP/Jarvis.xcarchive/Products/Applications/Jarvis.app" \
-              "$RUNNER_TEMP/ipa/Payload/Jarvis.app"
-        cd $RUNNER_TEMP/ipa
-        zip -r ../Jarvis.ipa Payload
-        echo "IPA created successfully"
+      - name: Package IPA
+        run: |
+          mkdir -p build/ipa/Payload
+          cp -r build/Jarvis.xcarchive/Products/Applications/Jarvis.app build/ipa/Payload/
+          cd build/ipa
+          zip -r ../../Jarvis.ipa Payload/
 
-    - name: Upload IPA Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: Jarvis-iOS-App
-        path: ${{ runner.temp }}/Jarvis.ipa
-        retention-days: 7
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: Jarvis-iOS-App
+          path: Jarvis.ipa
+          retention-days: 7
