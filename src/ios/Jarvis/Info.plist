@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>ch.tsh.jarvis</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Jarvis</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Mikrofonzugriff für Sprachbefehle</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Kamerazugriff für Bildverarbeitung</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Standortzugriff für ortsbasierte Dienste</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Kontaktezugriff für Integration</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Kalenderzugriff für Terminverwaltung</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Spracherkennung für Sprachbefehle</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>FaceID für sichere Authentifizierung</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Bluetooth für Geräteverbindung</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Lokales Netzwerk für Gerätekommunikation</string>
+</dict>
+</plist>

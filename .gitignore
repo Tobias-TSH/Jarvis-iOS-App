@@ -1,0 +1,61 @@
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserdatad
+*.xcscmblueprint
+
+# Swift Package Manager
+.Package.resolved
+*.xcodeproj/xcshareddata/swiftpm
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+Cartfile.resolved
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Localization
+*.lproj/*.xlf
+
+# Build
+build/
+*.app
+*.dSYM.zip
+*.dSYM
+
+# Node
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# DS_Store
+.DS_Store
+
+# Xcode 15
+.xcfilelist
